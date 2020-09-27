@@ -1,0 +1,49 @@
+
+
+reset ip pool name 1215 10.100.15.80
+
+static-bind ip-address 10.100.16.21 mac-address 54E1-ADAE-3104 description cwzxzr
+static-bind ip-address 10.100.16.22 mac-address 54E1-ADAC-3979 description cwzxlyj
+static-bind ip-address 10.100.16.23 mac-address 54E1-ADAE-3115 description cwzxzfr
+static-bind ip-address 10.100.16.24 mac-address 94C6-91B2-D56A description cwzxzzf
+static-bind ip-address 10.100.16.25 mac-address 8C16-45D9-B40B description cwzxlcl
+static-bind ip-address 10.100.16.26 mac-address 6C4B-9089-9C3E description cwzxwyx
+static-bind ip-address 10.100.16.27 mac-address 8C16-45DD-25EF description cwzxzhz
+static-bind ip-address 10.100.16.28 mac-address 54E1-ADAE-31A9 description cwzxjtt
+static-bind ip-address 10.100.16.29 mac-address 54E1-ADAE-3778 description cwzxcd
+static-bind ip-address 10.100.16.30 mac-address D067-E51C-BB20 description cwzxcln
+static-bind ip-address 10.100.16.31 mac-address 54E1-ADAE-3685 description cwzxfy
+static-bind ip-address 10.100.16.32 mac-address 54E1-ADAE-34C1 description cwzxlty
+
+undo static-bind ip-address 10.100.16.81 mac-address 54E1-ADAE-35C6 description cwzxqz
+undo static-bind ip-address 10.100.16.82 mac-address C49D-ED0B-4D12 description cwzxzz
+undo static-bind ip-address 10.100.16.83 mac-address 8C16-45D9-B77F description cwzxyz
+undo static-bind ip-address 10.100.16.84 mac-address 00E0-4CC3-052B description cwzxxqq
+
+static-bind ip-address 10.100.16.81 mac-address 54E1-ADAE-35C6 description glbzqz
+static-bind ip-address 10.100.16.82 mac-address C49D-ED0B-4D12 description glbzzz
+static-bind ip-address 10.100.16.83 mac-address 8C16-45D9-B77F description glbzyz
+static-bind ip-address 10.100.16.84 mac-address 00E0-4CC3-052B description zcbxqq
+
+
+
+user-bind static ip-address 10.100.15.21 mac-address B42E-9909-B501 vlan 1216
+
+
+
+user-bind static ip-address 10.100.16.21 mac-address 54E1-ADAE-3104 vlan 1216
+user-bind static ip-address 10.100.16.22 mac-address 54E1-ADAC-3979 vlan 1216
+user-bind static ip-address 10.100.16.23 mac-address 54E1-ADAE-3115 vlan 1216
+user-bind static ip-address 10.100.16.24 mac-address 94C6-91B2-D56A vlan 1216
+user-bind static ip-address 10.100.16.25 mac-address 8C16-45D9-B40B vlan 1216
+user-bind static ip-address 10.100.16.26 mac-address 6C4B-9089-9C3E vlan 1216
+user-bind static ip-address 10.100.16.27 mac-address 8C16-45DD-25EF vlan 1216
+user-bind static ip-address 10.100.16.28 mac-address 54E1-ADAE-31A9 vlan 1216
+user-bind static ip-address 10.100.16.29 mac-address 54E1-ADAE-3778 vlan 1216
+user-bind static ip-address 10.100.16.30 mac-address D067-E51C-BB20 vlan 1216
+user-bind static ip-address 10.100.16.31 mac-address 54E1-ADAE-3685 vlan 1216
+user-bind static ip-address 10.100.16.32 mac-address 54E1-ADAE-34C1 vlan 1216
+user-bind static ip-address 10.100.16.81 mac-address 54E1-ADAE-35C6 vlan 1216
+user-bind static ip-address 10.100.16.82 mac-address C49D-ED0B-4D12 vlan 1216
+user-bind static ip-address 10.100.16.83 mac-address 8C16-45D9-B77F vlan 1216
+user-bind static ip-address 10.100.16.84 mac-address 00E0-4CC3-052B vlan 1216

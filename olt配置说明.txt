@@ -1,0 +1,63 @@
+配置步骤
+1、olt 上增加ONU
+（DBA模板，线路模板，组网数据）
+a）配置DBA模板
+   dba-profile add profile-name fttb_dba_mngt type1 fix 1024
+   dba-profile add profile-name fttb_dba_voop type1 fix 4096
+   dba-profile add profile-name fttb_dba_hsi type4 max 524288
+   dba-profile add profile-name fttb_dba_vod type3 assure 8192 max 16384
+   dba-profile add profile-name fttb_dba_iptv type3 assure 8192 max 16384
+   
+b)配置onu线路模板
+  创建索引奥10的GPON ONU线路模板，名称为fttb(c)
+  ont-lineprofile gpon profile-id 10 profile-name fttb(c)
+  在线路模板配置模式下，将T-CONT与DBA模板绑定
+  tcont 4 dba-profile-name fttb_dba_mngt
+  tcont 5 dba-profile-name fttb_dba_vod
+  tcont 6 dba-profile-name fttb_dba_hsi
+  tcont 7 dba-profile-name fttb_dba_vod
+  tcont 8 dba-profile-name fttb_dba_iptv
+  在链路模式下，为各个T-CONT创建GEM Port
+  gem add 11 eth tcon 4
+  gem add 12 eth tcon 5
+  gem add 13 eth tcon 6
+  gem add 14 eth tcon 6
+  gem add 15 eth tcon 7
+  gem add 16 eth tcon 8
+  配置GEM Port 与onu侧业务的映射
+  配置 GEM Port与ONU侧业务映射模式为采用VLAN方式，并管理业务流（用户侧Vlan为8）映射到索引为11的GEM Port，将语音业务（用户侧vlan为200）的
+  业务流映射为12的GEM Port，将上网业务（用户侧vlan为1001-1016）的业务流映射到索引为13、14的GEM Port，将VOD业务（用户侧VLAN为300）的业务流映射到索引为13、14的GEM
+  映射到索引为15的GEM Port，将IPTV业务（用户侧vlan为1000）的业务流映射到索引16的GEM Port。
+  gem mapping 11 0 vlan 8
+  gem mapping 12 0 vlan 200
+  gem mapping 13 0 vlan 1001
+  ......
+  gem mapping 13 7 vlan 1008
+  gem mapping 14 0 vlan 1009
+  ......
+  gem mapping 14 7 vlan 1016
+  gem mapping 15 0 vlan 300
+  gem mapping 16 0 vlan 1000
+  配置完场后使用commit命令使配置参数生效
+  commit
+  quit
+  
+  
+配置OLT和ONU之间的管理通道
+  1、配置OLT的带内管理vlan和ip地址
+		#vlan 8 smart
+		#port vlan 8 0/9/0
+		#vlan priority 8 6 
+		#interface vlanif 8
+		#ip address 192.168.50.1 24
+		#quit
+  2、配置ONU的带内管理VLAN和IP地址
+		配置onu的静态ip地址为192.168.50.2 24，网关为192.168.50.254，管理vlan为8（同olt的管理VLAN）。
+		config-if-gpen-0/2:
+		#interface gpon 0/2
+		#ont ipconfig 1 1 static ip-address 192.168.50.2 mask 255.255.255 gateway 192.168.50.254 vlan 8
+		#quit
+		#
+  3、配置带内管理业务流
+		业务流索引为1，管理Vlan为8，GEM Port ID为11，用户侧VLAN为8，olt上对带内管理业务流不限速，因此直接使用索引为6的缺省流量模板。
+		#serverci-port 1 vlan 8 gpon 0/2/1 ont 1 gemport 11 multi-service user-vlan 8 rx-cttr 6 tx-cttr 6

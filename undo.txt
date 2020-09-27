@@ -1,0 +1,51 @@
+user-bind static ip-address 10.100.15.1 mac-address 1c20-dbc1-14d1 vlan 1215
+user-bind static ip-address 10.100.15.10 mac-address 1c1b-0de6-dda2 vlan 1215
+user-bind static ip-address 10.100.15.101 mac-address 00e0-4cb9-0693 vlan 1215
+user-bind static ip-address 10.100.15.117 mac-address 1cb7-2cae-eaeb vlan 1215
+user-bind static ip-address 10.100.15.123 mac-address 54e1-adae-367e vlan 1215
+user-bind static ip-address 10.100.15.127 mac-address 00e0-4cbf-02f4 vlan 1215
+undo user-bind static ip-address 10.100.15.130 mac-address d067-e51c-bb1a vlan 1215
+undo user-bind static ip-address 10.100.15.135 mac-address 94c6-9129-cdc7 vlan 1215
+undo user-bind static ip-address 10.100.15.140 mac-address 408d-5c5d-0059 vlan 1215
+undo user-bind static ip-address 10.100.15.146 mac-address 408d-5c9c-959d vlan 1215
+undo user-bind static ip-address 10.100.15.18 mac-address 00e0-66e6-09c1 vlan 1215
+undo user-bind static ip-address 10.100.15.183 mac-address b42e-99c3-4da3 vlan 1215
+undo user-bind static ip-address 10.100.15.191 mac-address 00e0-4c63-abfc vlan 1215
+undo user-bind static ip-address 10.100.15.2 mac-address 408d-5cab-9783 vlan 1215
+undo user-bind static ip-address 10.100.15.21 mac-address 18c0-4d40-fa4c vlan 1215
+undo user-bind static ip-address 10.100.15.234 mac-address fcaa-149a-de49 vlan 1215
+undo user-bind static ip-address 10.100.15.240 mac-address 0020-6b6f-440f vlan 1215
+undo user-bind static ip-address 10.100.15.241 mac-address 0020-6b88-6509 vlan 1215
+undo user-bind static ip-address 10.100.15.254 mac-address 48d5-391f-8597 vlan 1215
+undo user-bind static ip-address 10.100.15.38 mac-address e0d5-5ea3-c240 vlan 1215
+undo user-bind static ip-address 10.100.15.56 mac-address 54e1-adae-3108 vlan 1215
+undo user-bind static ip-address 10.100.15.63 mac-address b42e-99d6-0e9f vlan 1215
+undo user-bind static ip-address 10.100.15.78 mac-address e0d5-5efd-654a vlan 1215
+undo user-bind static ip-address 10.100.15.79 mac-address 1c1b-0d26-f302 vlan 1215
+undo user-bind static ip-address 10.100.15.80 mac-address 000a-eb94-5e3e vlan 1215
+undo user-bind static ip-address 10.100.15.81 mac-address fcaa-1433-6c3d vlan 1215
+undo user-bind static ip-address 10.100.15.84 mac-address 74d4-3554-adf0 vlan 1215
+undo user-bind static ip-address 10.100.15.89 mac-address b42e-9909-b501 vlan 1215
+undo user-bind static ip-address 10.100.15.90 mac-address 74bf-c0c0-18de vlan 1215
+undo user-bind static ip-address 10.100.15.91 mac-address 408d-5c59-1ea3 vlan 1215
+undo user-bind static ip-address 10.100.15.85 mac-address 00e0-4cb1-07d4 vlan 1215
+undo user-bind static ip-address 10.100.15.184 mac-address e0d5-5ece-f215 vlan 1215
+undo user-bind static ip-address 10.100.15.113 mac-address 00e0-66f6-88a7 vlan 1215
+
+undo user-bind static ip-address 10.100.15.10 mac-address 1c1b-0de6-dda2 vlan 1215
+undo user-bind static ip-address 10.100.15.101 mac-address 00e0-4cb9-0693 vlan 1215
+undo user-bind static ip-address 10.100.15.117 mac-address 1cb7-2cae-eaeb vlan 1215
+undo user-bind static ip-address 10.100.15.123 mac-address 54e1-adae-367e vlan 1215
+undo user-bind static ip-address 10.100.15.127 mac-address 00e0-4cbf-02f4 vlan 1215
+undo user-bind static ip-address 10.100.15.82 mac-address 000a-eb94-5e3e vlan 1215
+
+undo static-bind ip-address 10.100.15.91 mac-address 408d-5c59-1ea3
+undo static-bind ip-address 10.100.15.113 mac-address 00e0-66f6-88a7 description xxj
+undo static-bind ip-address 10.100.15.140 mac-address 408d-5c5d-0059
+undo static-bind ip-address 10.100.15.184 mac-address e0d5-5ece-f215 description cxx
+
+undo static-bind ip-address 10.100.15.82 
+undo static-bind ip-address 10.100.15.91 
+undo static-bind ip-address 10.100.15.113 
+undo static-bind ip-address 10.100.15.140 
+undo static-bind ip-address 10.100.15.184 

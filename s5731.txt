@@ -1,0 +1,517 @@
+Warning: Telnet is not a secure protocol, and it is recommended to use Stelnet.
+
+Login authentication
+
+
+Username:admin
+Password:
+Info: The max number of VTY users is 10, and the number
+      of current VTY users on line is 1.
+      The current login time is 2020-08-07 17:43:52+08:00.
+Info: Lastest accessed IP: 10.136.10.194  Time: 2020-08-07 10:32:51+08:00  Failed: 0
+
+<HUAWEI s5731 s24t4x>dis
+<HUAWEI s5731 s24t4x>display cu
+<HUAWEI s5731 s24t4x>display current-configuration 
+!Software Version V200R019C00SPC200
+#
+sysname HUAWEI s5731 s24t4x
+#
+vlan batch 11 16 to 20 100 110 120 1001 to 1002 1212 to 1216 1412 to 1416
+#
+authentication-profile name default_authen_profile
+authentication-profile name dot1x_authen_profile
+authentication-profile name dot1xmac_authen_profile
+authentication-profile name mac_authen_profile
+authentication-profile name multi_authen_profile
+authentication-profile name portal_authen_profile
+#
+telnet server enable
+#
+dhcp enable
+#
+dhcp snooping enable
+user-bind static ip-address 10.100.15.1 mac-address 1c20-dbc1-14d1 vlan 1215
+user-bind static ip-address 10.100.15.10 mac-address 1c1b-0de6-dda2 vlan 1215
+user-bind static ip-address 10.100.15.101 mac-address 00e0-4cb9-0693 vlan 1215
+user-bind static ip-address 10.100.15.117 mac-address 1cb7-2cae-eaeb vlan 1215
+user-bind static ip-address 10.100.15.123 mac-address 54e1-adae-367e vlan 1215
+user-bind static ip-address 10.100.15.127 mac-address 00e0-4cbf-02f4 vlan 1215
+user-bind static ip-address 10.100.15.130 mac-address d067-e51c-bb1a vlan 1215
+user-bind static ip-address 10.100.15.135 mac-address 94c6-9129-cdc7 vlan 1215
+user-bind static ip-address 10.100.15.140 mac-address 408d-5c5d-0059 vlan 1215
+user-bind static ip-address 10.100.15.146 mac-address 408d-5c9c-959d vlan 1215
+user-bind static ip-address 10.100.15.18 mac-address 00e0-66e6-09c1 vlan 1215
+user-bind static ip-address 10.100.15.183 mac-address b42e-99c3-4da3 vlan 1215
+user-bind static ip-address 10.100.15.191 mac-address 00e0-4c63-abfc vlan 1215
+user-bind static ip-address 10.100.15.2 mac-address 408d-5cab-9783 vlan 1215
+user-bind static ip-address 10.100.15.21 mac-address 18c0-4d40-fa4c vlan 1215
+user-bind static ip-address 10.100.15.234 mac-address fcaa-149a-de49 vlan 1215
+user-bind static ip-address 10.100.15.240 mac-address 0020-6b6f-440f vlan 1215
+user-bind static ip-address 10.100.15.241 mac-address 0020-6b88-6509 vlan 1215
+user-bind static ip-address 10.100.15.254 mac-address 48d5-391f-8597 vlan 1215
+user-bind static ip-address 10.100.15.38 mac-address e0d5-5ea3-c240 vlan 1215
+user-bind static ip-address 10.100.15.56 mac-address 54e1-adae-3108 vlan 1215
+user-bind static ip-address 10.100.15.63 mac-address b42e-99d6-0e9f vlan 1215
+user-bind static ip-address 10.100.15.78 mac-address e0d5-5efd-654a vlan 1215
+user-bind static ip-address 10.100.15.79 mac-address 1c1b-0d26-f302 vlan 1215
+user-bind static ip-address 10.100.15.80 mac-address 000a-eb94-5e3e vlan 1215
+user-bind static ip-address 10.100.15.81 mac-address fcaa-1433-6c3d vlan 1215
+user-bind static ip-address 10.100.15.84 mac-address 74d4-3554-adf0 vlan 1215
+user-bind static ip-address 10.100.15.89 mac-address b42e-9909-b501 vlan 1215
+user-bind static ip-address 10.100.15.90 mac-address 74bf-c0c0-18de vlan 1215
+user-bind static ip-address 10.100.15.91 mac-address 408d-5c59-1ea3 vlan 1215
+user-bind static ip-address 10.100.15.85 mac-address 00e0-4cb1-07d4 vlan 1215
+user-bind static ip-address 10.100.15.184 mac-address e0d5-5ece-f215 vlan 1215
+user-bind static ip-address 10.100.15.113 mac-address 00e0-66f6-88a7 vlan 1215
+#
+diffserv domain default
+#
+radius-server template default
+#
+pki realm default
+ certificate-check none
+#
+acl number 3001
+ rule 5 permit ip source 10.136.10.0 0.0.0.255
+acl number 3010
+ rule 5 deny ip source 10.70.10.0 0.0.0.255 destination 10.30.12.0 0.0.0.255
+ rule 10 deny ip source 10.70.10.0 0.0.0.255 destination 10.30.13.0 0.0.0.255
+ rule 15 deny ip source 10.70.10.0 0.0.0.255 destination 10.30.14.0 0.0.0.255
+ rule 20 deny ip source 10.70.10.0 0.0.0.255 destination 10.30.15.0 0.0.0.255
+ rule 25 deny ip source 10.70.10.0 0.0.0.255 destination 10.30.16.0 0.0.0.255
+ rule 30 deny ip source 10.70.20.0 0.0.0.255 destination 10.30.12.0 0.0.0.255
+ rule 35 deny ip source 10.70.20.0 0.0.0.255 destination 10.30.13.0 0.0.0.255
+ rule 40 deny ip source 10.70.20.0 0.0.0.255 destination 10.30.14.0 0.0.0.255
+ rule 45 deny ip source 10.70.20.0 0.0.0.255 destination 10.30.15.0 0.0.0.255
+ rule 50 deny ip source 10.70.20.0 0.0.0.255 destination 10.30.16.0 0.0.0.255
+acl number 3011                           
+ rule 5 deny ip source 10.110.10.0 0.0.0.255 destination 10.30.12.0 0.0.0.255
+ rule 10 deny ip source 10.110.10.0 0.0.0.255 destination 10.30.13.0 0.0.0.255
+ rule 15 deny ip source 10.110.10.0 0.0.0.255 destination 10.30.14.0 0.0.0.255
+ rule 20 deny ip source 10.110.10.0 0.0.0.255 destination 10.30.15.0 0.0.0.255
+ rule 25 deny ip source 10.110.10.0 0.0.0.255 destination 10.30.16.0 0.0.0.255
+ rule 30 deny ip source 10.110.10.0 0.0.0.255 destination 10.100.12.0 0.0.0.255
+ rule 35 deny ip source 10.110.10.0 0.0.0.255 destination 10.100.13.0 0.0.0.255
+ rule 40 deny ip source 10.110.10.0 0.0.0.255 destination 10.100.14.0 0.0.0.255
+ rule 45 deny ip source 10.110.10.0 0.0.0.255 destination 10.100.15.0 0.0.0.255
+ rule 50 deny ip source 10.110.10.0 0.0.0.255 destination 10.100.16.0 0.0.0.255
+acl number 3012
+ rule 5 deny ip source 10.110.20.0 0.0.0.255 destination 10.30.12.0 0.0.0.255
+ rule 10 deny ip source 10.110.20.0 0.0.0.255 destination 10.30.13.0 0.0.0.255
+ rule 15 deny ip source 10.110.20.0 0.0.0.255 destination 10.30.14.0 0.0.0.255
+ rule 20 deny ip source 10.110.20.0 0.0.0.255 destination 10.30.15.0 0.0.0.255
+ rule 25 deny ip source 10.110.20.0 0.0.0.255 destination 10.30.16.0 0.0.0.255
+ rule 30 deny ip source 10.110.20.0 0.0.0.255 destination 10.100.12.0 0.0.0.255
+ rule 35 deny ip source 10.110.20.0 0.0.0.255 destination 10.100.13.0 0.0.0.255
+ rule 40 deny ip source 10.110.20.0 0.0.0.255 destination 10.100.14.0 0.0.0.255
+ rule 45 deny ip source 10.110.20.0 0.0.0.255 destination 10.100.15.0 0.0.0.255
+ rule 50 deny ip source 10.110.20.0 0.0.0.255 destination 10.100.16.0 0.0.0.255
+acl number 3013
+ rule 5 deny ip source 10.136.10.0 0.0.0.255 destination 10.60.136.0 0.0.0.255
+ rule 10 deny ip source 10.136.10.0 0.0.0.255 destination 10.100.13.0 0.0.0.255
+ rule 15 deny ip source 10.136.10.0 0.0.0.255 destination 10.100.14.0 0.0.0.255
+ rule 20 deny ip source 10.136.10.0 0.0.0.255 destination 10.100.15.0 0.0.0.255
+ rule 25 deny ip source 10.136.10.0 0.0.0.255 destination 10.100.16.0 0.0.0.255
+ rule 35 deny ip source 10.136.10.0 0.0.0.255 destination 10.100.12.0 0.0.0.255
+ rule 40 deny ip source 10.136.10.0 0.0.0.255 destination 10.70.10.0 0.0.0.255
+ rule 45 deny ip source 10.136.10.0 0.0.0.255 destination 10.70.20.0 0.0.0.255
+ rule 50 deny ip source 10.136.10.0 0.0.0.255 destination 10.30.12.0 0.0.0.255
+ rule 55 deny ip source 10.136.10.0 0.0.0.255 destination 10.30.13.0 0.0.0.255
+ rule 60 deny ip source 10.136.10.0 0.0.0.255 destination 10.30.14.0 0.0.0.255
+ rule 65 deny ip source 10.136.10.0 0.0.0.255 destination 10.30.15.0 0.0.0.255
+ rule 80 deny ip source 10.136.10.0 0.0.0.255 destination 10.30.16.0 0.0.0.255
+ rule 85 deny ip source 10.136.10.0 0.0.0.255 destination 10.110.10.0 0.0.0.255
+ rule 90 deny ip source 10.136.10.0 0.0.0.255 destination 10.110.20.0 0.0.0.255
+#
+acl number 4000
+ rule 5 deny source-mac b0eb-5724-0b98
+#
+traffic classifier macjinyong operator or
+ if-match acl 4000
+traffic classifier wifiglfl operator or
+ if-match acl 3001
+#
+traffic behavior macjinyong
+ deny                                     
+traffic behavior wifigl
+ redirect ip-nexthop 10.100.36.254
+#
+traffic policy macjycl match-order config
+ classifier macjinyong behavior macjinyong
+traffic policy wifiglcl match-order config
+ classifier wifiglfl behavior wifigl
+#
+free-rule-template name default_free_rule
+#
+portal-access-profile name portal_access_profile
+#
+drop-profile default
+#
+vlan 1215
+ dhcp snooping enable
+ ipv4 source check user-bind enable
+ ipv6 source check user-bind enable
+ ip source check user-bind check-item ip-address
+#
+ip pool 1001
+ gateway-list 10.70.10.1
+ network 10.70.10.0 mask 255.255.255.0
+ excluded-ip-address 10.70.10.201 10.70.10.254
+ dns-list 114.114.114.114
+#
+ip pool 1002
+ gateway-list 10.70.20.1
+ network 10.70.20.0 mask 255.255.255.0
+ excluded-ip-address 10.70.20.201 10.70.20.254
+ dns-list 114.114.114.114
+#
+ip pool 1212
+ gateway-list 10.100.12.1
+ network 10.100.12.0 mask 255.255.255.0
+ excluded-ip-address 10.100.12.201 10.100.12.254
+ dns-list 202.103.224.68 114.114.114.114
+#
+ip pool 1213
+ gateway-list 10.100.13.1
+ network 10.100.13.0 mask 255.255.255.0
+ excluded-ip-address 10.100.13.201 10.100.13.254
+ dns-list 202.103.224.68 114.114.114.114
+#
+ip pool 1214
+ gateway-list 10.100.14.1
+ network 10.100.14.0 mask 255.255.255.0
+ excluded-ip-address 10.100.14.201 10.100.14.254
+ dns-list 202.103.224.68 114.114.114.114
+#
+ip pool 1215
+ gateway-list 10.100.15.1
+ network 10.100.15.0 mask 255.255.255.0
+ excluded-ip-address 10.100.15.201 10.100.15.254
+ static-bind ip-address 10.100.15.91 mac-address 408d-5c59-1ea3
+ static-bind ip-address 10.100.15.113 mac-address 00e0-66f6-88a7 description xxj
+ static-bind ip-address 10.100.15.140 mac-address 408d-5c5d-0059
+ static-bind ip-address 10.100.15.184 mac-address e0d5-5ece-f215 description cxx
+ dns-list 202.103.224.68 114.114.114.114
+#
+ip pool 1216
+ gateway-list 10.100.16.1
+ network 10.100.16.0 mask 255.255.255.0
+ excluded-ip-address 10.100.16.201 10.100.16.254
+ dns-list 202.103.224.68 114.114.114.114
+#
+ip pool 19
+ gateway-list 192.168.0.1
+ network 192.168.0.0 mask 255.255.255.0
+ excluded-ip-address 192.168.0.201 192.168.0.254
+ dns-list 202.103.224.68 114.114.114.114
+#                                         
+ip pool 1412
+ gateway-list 10.30.12.1
+ network 10.30.12.0 mask 255.255.255.0
+ dns-list 114.114.114.114
+#
+ip pool 1413
+ gateway-list 10.30.13.1
+ network 10.30.13.0 mask 255.255.255.0
+ dns-list 114.114.114.114
+#
+ip pool 1414
+ gateway-list 10.30.14.1
+ network 10.30.14.0 mask 255.255.255.0
+ dns-list 114.114.114.114
+#
+ip pool 1415
+ gateway-list 10.30.15.1
+ network 10.30.15.0 mask 255.255.255.0
+ dns-list 114.114.114.114
+#
+ip pool 1416
+ gateway-list 10.30.16.1
+ network 10.30.16.0 mask 255.255.255.0
+ dns-list 114.114.114.114                 
+#
+ip pool 125
+#
+ip pool 16
+ gateway-list 10.110.10.1
+ network 10.110.10.0 mask 255.255.255.0
+ excluded-ip-address 10.110.10.201 10.110.10.254
+ dns-list 202.103.224.68 114.114.114.114
+#
+ip pool 17
+ gateway-list 10.110.20.1
+ network 10.110.20.0 mask 255.255.255.0
+ excluded-ip-address 10.110.20.201 10.110.20.254
+ dns-list 202.103.224.68 114.114.114.114
+#
+ip pool 18
+ gateway-list 10.136.10.1
+ network 10.136.10.0 mask 255.255.255.0
+ excluded-ip-address 10.136.10.2 10.136.10.10
+ lease day 0 hour 1 minute 0
+ dns-list 202.103.224.68 114.114.114.114
+#
+aaa
+ authentication-scheme default            
+ authentication-scheme radius
+  authentication-mode radius
+ authorization-scheme default
+ accounting-scheme default
+ local-aaa-user password policy administrator
+  password history record number 0
+  password expire 0
+ domain default
+  authentication-scheme radius
+  radius-server default
+ domain default_admin
+  authentication-scheme default
+ local-user admin password irreversible-cipher $1a$6o+:>X8~g'$_:BQ/wH]kVUcHo*'srYY5p@!8=&0g&`uh[3y4/FD$
+ local-user admin privilege level 15
+ local-user admin service-type telnet http
+#
+interface Vlanif1
+#
+interface Vlanif16
+ description wuyebangong
+ ip address 10.110.10.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif17                        
+ description jiudianbangong
+ ip address 10.110.20.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif18
+ description wifi-ap
+ ip address 10.136.10.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif19
+ ip address 192.168.0.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif20
+ description server
+ ip address 10.60.136.1 255.255.255.0
+#
+interface Vlanif100
+ description bangongfanghuoqiang
+ ip address 10.100.36.254 255.255.255.0
+#
+interface Vlanif110
+ description jiudianfanghuoqiang
+ ip address 10.110.30.254 255.255.255.0   
+#
+interface Vlanif120
+ description wififanghuoqiang
+ ip address 10.136.20.254 255.255.255.0
+#
+interface Vlanif1001
+ description bangongjiankong
+ ip address 10.70.10.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1002
+ description jiudianjiankong
+ ip address 10.70.20.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1212
+ description jituanbangong12F
+ ip address 10.100.12.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1213
+ description jituanbangong13F
+ ip address 10.100.13.1 255.255.255.0
+ dhcp select global                       
+#
+interface Vlanif1214
+ description jituanbangong14F
+ ip address 10.100.14.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1215
+ description jituanbangong15F
+ ip address 10.100.15.1 255.255.255.0
+ arp-proxy enable
+ dhcp select global
+#
+interface Vlanif1216
+ description jituanbangong16F
+ ip address 10.100.16.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1412
+ description bangongmenjin12F
+ ip address 10.30.12.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1413
+ description bangongmenjin13F             
+ ip address 10.30.13.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1414
+ description bangongmenjin14F
+ ip address 10.30.14.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1415
+ description bangongmenjin15F
+ ip address 10.30.15.1 255.255.255.0
+ dhcp select global
+#
+interface Vlanif1416
+ description bangongmenjin16F
+ ip address 10.30.16.1 255.255.255.0
+ dhcp select global
+#
+interface MEth0/0/1
+ ip address 192.168.1.253 255.255.255.0
+#
+interface GigabitEthernet0/0/1
+ port link-type access
+ port default vlan 20                     
+#
+interface GigabitEthernet0/0/2
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/3
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/4
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/5
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/6
+ port link-type access
+ port default vlan 1001
+#
+interface GigabitEthernet0/0/7
+ port link-type access
+ port default vlan 20                     
+#
+interface GigabitEthernet0/0/8
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/9
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/10
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/11
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/12
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/13
+ port link-type access
+ port default vlan 20                     
+#
+interface GigabitEthernet0/0/14
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/15
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/16
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/17
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/18
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/19
+ port link-type access
+ port default vlan 20                     
+#
+interface GigabitEthernet0/0/20
+ port link-type access
+ port default vlan 20
+#
+interface GigabitEthernet0/0/21
+ port link-type trunk
+ port trunk allow-pass vlan 18 120
+ traffic-policy macjycl inbound
+#
+interface GigabitEthernet0/0/22
+ port link-type access
+ port default vlan 120
+#
+interface GigabitEthernet0/0/23
+ port link-type access
+ port default vlan 110
+#
+interface GigabitEthernet0/0/24
+ port link-type access
+ port default vlan 100
+#
+interface XGigabitEthernet0/0/1
+ port link-type trunk                     
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 10 to 11 16 to 20 100 110 120 136 1001 to 1002 1212 to 1216 1412 to 1416
+ traffic-policy wifiglcl inbound
+#
+interface XGigabitEthernet0/0/2
+#
+interface XGigabitEthernet0/0/3
+#
+interface XGigabitEthernet0/0/4
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 10.100.36.253
+#
+traffic-filter inbound acl 3013
+traffic-filter outbound acl 3013
+traffic-filter inbound acl 3010
+traffic-filter outbound acl 3010
+traffic-filter inbound acl 3011
+traffic-filter outbound acl 3011
+traffic-filter inbound acl 3012
+traffic-filter outbound acl 3012
+#
+ssh server cipher aes256_ctr aes128_ctr   
+ssh server hmac sha2_256
+ssh client cipher aes256_ctr aes128_ctr
+ssh client hmac sha2_256
+ssh server dh-exchange min-len 2048
+#
+user-interface con 0
+ authentication-mode none
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 15
+ protocol inbound telnet
+user-interface vty 16 20
+#
+dot1x-access-profile name dot1x_access_profile
+#
+mac-access-profile name mac_access_profile
+#
+ops
+#
+return
+<HUAWEI s5731 s24t4x> 

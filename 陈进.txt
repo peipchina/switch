@@ -1,0 +1,79 @@
+display ont capability
+
+Enable Hardware Video Acceleration
+#
+
+enable 
+config
+#
+[gpon]
+  <gpon-0/1>
+光猫数据
+ interface gpon 0/1
+ ont add 6 3 loid-auth "0779001667498412" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206239" 
+ tcont bind-profile 6 3 1 profile-id 48
+#
+[bbs-config]
+  <bbs-config>
+ service-port 154 vlan 2302 gpon 0/1/6 ont 3 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 292 vlan 1214 gpon 0/1/6 ont 3 gemport 3 multi-service user-vlan 1214 tag-transform translate
+ service-port 324 vlan 18 gpon 0/1/6 ont 3 gemport 4 multi-service user-vlan 18 tag-transform translate
+ service-port 356 vlan 20 gpon 0/1/6 ont 3 gemport 4 multi-service user-vlan 20 tag-transform translate
+ traffic-limit ont 0/1/6 3 down-stream traffic-table index 1000
+#
+
+#
+ONU	数据
+ interface gpon 0/1 //进入单板模式
+ ont add 0 （端口） 2 (光猫) sn-auth 48575443A7BD829E （SN验证） snmp ont-lineprofile-id 100 （固定绑定线路模板） desc ONU-MA5626-POE24-1F1# （OMU位置模式） 
+ ont ipconfig 0 2 static ip-address 10.10.10.21 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+#
+数据配置完，查看光猫是否在线，在线为online
+ 框/槽/端口               : 0/1/0
+  ONT编号                  : 2
+  控制标志                 : 激活
+  运行标志                 : 在线
+  配置状态                 : 正常
+  匹配状态                 : 匹配
+  DBA方式                  : SR
+switch  language-mode  中文模式
+display ont info  0 1 0 2  (框 槽位 端口 光猫序号)
+#
+
+
+ interface gpon 0/1 //进入单板模式
+ ont add 0 2 sn-auth "48575443A7BD829E" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE24-1F1#" 
+ ont ipconfig 0 2 static ip-address 10.10.10.21 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+#
+配置业务
+quit （退出端口模式）
+ service-port  vlan 11 （绑定vlan与交换机一致） gpon 0/1/0 （pon口）ont 2  （光猫序号）gemport 1 multi-service user-vlan 11 tag-transform translate
+#
+service-port  vlan 11 gpon 0/1/0 ont 2 gemport 1 multi-service user-vlan 11 tag-transform translate
+插上光猫后查看mac
+
+display mac-address port 0/1/0 ont 2
+
+OLT-MA5800-X2(config)#display mac-address port 0/1/0 ont 2 
+{ <cr>||<K> }: 
+
+  命令：
+        display mac-address port 0/1/0 ont 2
+  --------------------------------------------------------------------
+  虚端口 BUNDLE 类型 MAC地址        地址 框/槽/端口 VPI  VCI   VLAN ID
+    索引 索引                       类型
+  --------------------------------------------------------------------
+      41     -  gpon 8886-0341-dde8 动态 0 /1 /0    2    1          11
+      95     -  gpon 1012-fb0b-5280 动态 0 /1 /0    2    2        1002
+      95     -  gpon 1012-fb0b-527f 动态 0 /1 /0    2    2        1002
+      94     -  gpon 1012-fb0b-5293 动态 0 /1 /0    2    2        1001
+      95     -  gpon 5850-ed6a-a16a 动态 0 /1 /0    2    2        1002
+      95     -  gpon 1012-fb0b-527e 动态 0 /1 /0    2    2        1002
+     101     -  gpon 3099-358a-9531 动态 0 /1 /0    2    1          16
+  --------------------------------------------------------------------
+
+删除数据
+undo service-port xxx
+#
+interface gpon 
+ont delete 0 （端口） 2 (光猫)

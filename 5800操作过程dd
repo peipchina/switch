@@ -1,0 +1,881 @@
+﻿OLT-MA5800-X2(config)#display  current-configuration            
+{ <cr>|include-default<K>|interface<K>|ont<K>|port<K>|section<K>|service-port<K>||<K> }: 
+
+  命令：
+        display  current-configuration
+[Active: H901MPSC; Standby: H901MPSC]
+[Patch Info: SPH102]
+[MA5800V100R018: 3610]
+#
+[pre-config]
+  <pre-config>
+ board add 0/0 H901PISA 
+ board add 0/1 H901GPLF 
+#
+[sysmode]
+  <sysmode>
+ switch vdsl mode to tr129
+ xpon mode switch-to profile-mode
+ sysmode end
+#
+[global-config]
+  <global-config>
+ sysname OLT-MA5800-X2
+ terminal user name buildrun_new_password root *j$1b$\{I8Yz!DvD$^^t^TT6t%B&W!o'a&]^(MquOF3-4;'Pl__+n=bd*$* 7 0000:00:00:00:00:00 2020:09:04:08:37:04 root 1 first-login-info 0 "-----"
+ terminal user name buildrun_new_password zxdynsnu *~kc$1b$|}._/6PbNT$Rb1+:b[x}=m#ggK<D7gTsvJqFRpt<3jT:TLF$+}9$* 0 2000:01:01:13:54:33 2000:01:01:13:54:33 root 2 first-login-info 0 "beihaidianxin"
+ terminal user name buildrun_new_password dhsowzeu *~kc$1b$<E*n<r\`{R$.|Y$GD<{K),L(;DyBub1["~J"n(z(9c/0d.rYOp1$* 0 2020:06:17:16:28:01 2020:06:17:16:28:01 root 3 first-login-info 0 "-----"
+ terminal user name buildrun_new_password huawei *i$1b$9K"I@.N9rF$yoGSR{Gt=5`y~-69Hs867`;`!z$TP5xH&R*01rx6$* 0 2020:06:19:11:41:11 2020:06:19:11:41:11 root 4 first-login-info 0 "-----"
+ terminal user name buildrun_new_password hwchenjin *[$1a$:MG6SBlS]0$5BDmM5{[4LJd7J+ndK7Z8f<Q8(^;<K5=1*RDCj2@$* 0 2020:07:24:22:12:52 2020:07:24:22:12:52 root 5 first-login-info 0 "chenjin"
+ terminal user name history_password root *j$1b$z=]]~:BZD+$H-p99<]{{Ge6hsH'M1)Ficl=2^zscQSrqgL<U6=#$*
+ traffic table ip index 7 name "DOWN_20M" cir 20480 cbs 657360 pir 40960 pbs 1312720 color-mode color-blind priority user-cos 0 inner-priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 8 name "DEFAULT_SCOS7_CCOS7" cir off color-mode color-blind priority 7 inner-priority 7 priority-policy local-setting
+ traffic table ip index 9 name "DEFAULT_SCOS2_CCOS2" cir off color-mode color-blind priority 2 inner-priority 2 priority-policy local-setting
+ traffic table ip index 10 name "DEFAULT_SCOS5_CCOS5" cir off color-mode color-blind priority 5 inner-priority 5 priority-policy local-setting
+ traffic table ip index 11 name "30M" cir 30720 cbs 985040 pir 61440 pbs 1968080 color-mode color-blind priority user-cos 0 inner-priority user-cos 0 priority-policy tag-in-package
+ traffic table ip index 12 name "100M" cir 153600 cbs 4917200 pir 307200 pbs 9832400 color-mode color-blind priority user-cos 0 inner-priority user-cos 0 priority-policy tag-in-package
+ traffic table ip index 100 name "HG_100M" cir 133120 cbs 4261840 pir 133120 pbs 4261840 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 104 name "HG_104M" cir 138496 cbs 4433872 pir 138496 pbs 4433872 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 108 name "HG_108M" cir 143808 cbs 4603856 pir 143808 pbs 4603856 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 112 name "HG_112M" cir 149120 cbs 4773840 pir 149120 pbs 4773840 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 124 name "HG_124M" cir 165120 cbs 5285840 pir 165120 pbs 5285840 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 150 name "HG_150M" cir 199680 cbs 6391760 pir 199680 pbs 6391760 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 200 name "HG_200M" cir 266240 cbs 8521680 pir 266240 pbs 8521680 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 300 name "HG_300M" cir 399360 cbs 10240000 pir 399360 pbs 10240000 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 301 name "HG_1M" cir 1344 cbs 45008 pir 1344 pbs 45008 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 302 name "HG_2M" cir 2688 cbs 88016 pir 2688 pbs 88016 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 304 name "HG_4M" cir 5376 cbs 174032 pir 5376 pbs 174032 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 306 name "HG_6M" cir 8000 cbs 258000 pir 8000 pbs 258000 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 308 name "HG_8M" cir 10688 cbs 344016 pir 10688 pbs 344016 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 310 name "HG_10M" cir 13312 cbs 427984 pir 13312 pbs 427984 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 312 name "HG_12M" cir 16000 cbs 514000 pir 16000 pbs 514000 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 316 name "HG_16M" cir 21312 cbs 683984 pir 21312 pbs 683984 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 320 name "HG_20M" cir 26624 cbs 853968 pir 26624 pbs 853968 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 324 name "HG_24M" cir 32000 cbs 1026000 pir 32000 pbs 1026000 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 328 name "HG_28M" cir 37312 cbs 1195984 pir 37312 pbs 1195984 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 330 name "HG_30M" cir 39936 cbs 1279952 pir 39936 pbs 1279952 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 332 name "HG_32M" cir 42624 cbs 1365968 pir 42624 pbs 1365968 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 334 name "HG_34M" cir 45312 cbs 1451984 pir 45312 pbs 1451984 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 336 name "HG_36M" cir 47936 cbs 1535952 pir 47936 pbs 1535952 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 338 name "HG_38M" cir 50624 cbs 1621968 pir 50624 pbs 1621968 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 340 name "HG_40M" cir 53248 cbs 1705936 pir 53248 pbs 1705936 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 342 name "HG_42M" cir 55936 cbs 1791952 pir 55936 pbs 1791952 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 350 name "HG_50M" cir 66560 cbs 2131920 pir 66560 pbs 2131920 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 354 name "HG_54M" cir 71936 cbs 2303952 pir 71936 pbs 2303952 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 358 name "HG_58M" cir 77248 cbs 2473936 pir 77248 pbs 2473936 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 362 name "HG_62M" cir 82560 cbs 2643920 pir 82560 pbs 2643920 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 374 name "HG_74M" cir 98560 cbs 3155920 pir 98560 pbs 3155920 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 380 name "HG_80M" cir 106496 cbs 3409872 pir 106496 pbs 3409872 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 384 name "HG_84M" cir 111872 cbs 3581904 pir 111872 pbs 3581904 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 388 name "HG_88M" cir 117184 cbs 3751888 pir 117184 pbs 3751888 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 392 name "HG_92M" cir 122496 cbs 3921872 pir 122496 pbs 3921872 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 400 name "HG_400M" cir 532480 cbs 10240000 pir 532480 pbs 10240000 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 500 name "HG_500M" cir 665600 cbs 10240000 pir 665600 pbs 10240000 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 600 name "HG_600M" cir 798720 cbs 25561040 pir 1597440 pbs 51120080 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 700 name "HG_700M" cir 931840 cbs 29820880 pir 1863680 pbs 59639760 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 800 name "HG_800M" cir 1064960 cbs 34080720 pir 2129920 pbs 68159440 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 900 name "HG_900M" cir 1198080 cbs 38340560 pir 2396160 pbs 76679120 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 1000 name "HG_1000M" cir 1331200 cbs 10240000 pir 1331200 pbs 10240000 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ traffic table ip index 1002 name "10G-1G-DOWN" cir 10240000 cbs 10240000 pir 10240000 pbs 10240000 color-mode color-blind priority user-inner-cos 0 priority-policy tag-in-package
+ xpon alarm los-control enable
+ dba-profile add profile-id 10 profile-name "30M" type4 max 30720
+ dba-profile add profile-id 11 profile-name "EPON_20M" type4 max 20480
+ dba-profile add profile-id 12 profile-name "100M" type4 max 153600
+ dba-profile add profile-id 13 profile-name "HG_1M" type4 max 1344
+ dba-profile add profile-id 14 profile-name "HG_2M" type4 max 2688
+ dba-profile add profile-id 15 profile-name "HG_4M" type4 max 5376
+ dba-profile add profile-id 16 profile-name "HG_6M" type4 max 8000
+ dba-profile add profile-id 17 profile-name "HG_8M" type4 max 10688
+ dba-profile add profile-id 18 profile-name "HG_10M" type4 max 13312
+ dba-profile add profile-id 19 profile-name "HG_12M" type4 max 16000
+ dba-profile add profile-id 20 profile-name "HG_16M" type4 max 21312
+ dba-profile add profile-id 21 profile-name "HG_20M" type4 max 26624
+ dba-profile add profile-id 22 profile-name "GPON_30M" type4 max 30720
+ dba-profile add profile-id 23 profile-name "HG_24M" type4 max 32000
+ dba-profile add profile-id 24 profile-name "HG_28M" type4 max 37312
+ dba-profile add profile-id 25 profile-name "HG_30M" type4 max 39936
+ dba-profile add profile-id 26 profile-name "HG_32M" type4 max 42624
+ dba-profile add profile-id 27 profile-name "HG_34M" type4 max 45312
+ dba-profile add profile-id 28 profile-name "HG_36M" type4 max 47936
+ dba-profile add profile-id 29 profile-name "HG_38M" type4 max 50624
+ dba-profile add profile-id 30 profile-name "HG_40M" type4 max 53248
+ dba-profile add profile-id 31 profile-name "HG_42M" type4 max 55936
+ dba-profile add profile-id 32 profile-name "HG_50M" type4 max 66560
+ dba-profile add profile-id 33 profile-name "HG_54M" type4 max 71936
+ dba-profile add profile-id 34 profile-name "HG_58M" type4 max 77248
+ dba-profile add profile-id 35 profile-name "HG_62M" type4 max 82560
+ dba-profile add profile-id 36 profile-name "HG_74M" type4 max 98560
+ dba-profile add profile-id 37 profile-name "HG_80M" type4 max 106496
+ dba-profile add profile-id 38 profile-name "HG_84M" type4 max 111872
+ dba-profile add profile-id 39 profile-name "HG_88M" type4 max 117184
+ dba-profile add profile-id 40 profile-name "HG_92M" type4 max 122496
+ dba-profile add profile-id 41 profile-name "HG_100M" type4 max 133120
+ dba-profile add profile-id 42 profile-name "HG_104M" type4 max 138496
+ dba-profile add profile-id 43 profile-name "HG_108M" type4 max 143808
+ dba-profile add profile-id 44 profile-name "HG_112M" type4 max 149120
+ dba-profile add profile-id 45 profile-name "HG_124M" type4 max 165120
+ dba-profile add profile-id 46 profile-name "HG_150M" type4 max 199680
+ dba-profile add profile-id 47 profile-name "HG_200M" type4 max 266240
+ dba-profile add profile-id 48 profile-name "HG_300M" type4 max 399360
+ dba-profile add profile-id 49 profile-name "HG_400M" type4 max 532480
+ dba-profile add profile-id 50 profile-name "HG_500M" type4 max 665600
+ dba-profile add profile-id 51 profile-name "HG_1000M" type4 max 1000000
+ dba-profile add profile-id 52 profile-name "dba-profile_52" type2 assure 1024000
+ dba-profile add profile-id 53 profile-name "HG_600M" type4 max 798720
+ dba-profile add profile-id 54 profile-name "HG_700M" type4 max 931840
+ dba-profile add profile-id 55 profile-name "HG_800M" type4 max 1000000
+ dba-profile add profile-id 56 profile-name "HG_900M" type4 max 1000000
+ dba-profile add profile-id 100 profile-name "dba-profile_100" type3 assure 102400 max 1024000
+ dba-profile add profile-id 120 profile-name "10G-1G-PON" type4 max 1235968
+ ont-alarm-policy policy-id 0 policy-name alarm-policy_0
+  alarm filter 0x2e112004
+  alarm filter 0x2e11a00a
+  alarm filter 0x2e11a00c
+  commit
+ ont-srvprofile epon profile-id 1 profile-name "FTTH_EPON_HGU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  ring check enable
+  port vlan eth 1 transparent 
+  port vlan eth 2 transparent 
+  port vlan eth 3 transparent 
+  port vlan eth 4 transparent 
+  port vlan eth 5 transparent 
+  port vlan eth 6 transparent 
+  port vlan eth 7 transparent 
+  port vlan eth 8 transparent 
+  commit
+ ont-srvprofile epon profile-id 3 profile-name "FTTH_EPON_SFU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  ring check enable
+  commit
+ ont-srvprofile epon profile-id 5 profile-name "FTTO_EPON_HGU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  ring check enable
+  port vlan eth 1 transparent 
+  port vlan eth 2 transparent 
+  port vlan eth 3 transparent 
+  port vlan eth 4 transparent 
+  port vlan eth 5 transparent 
+  port vlan eth 6 transparent 
+  port vlan eth 7 transparent 
+  port vlan eth 8 transparent 
+  commit
+ ont-srvprofile epon profile-id 7 profile-name "FTTO_EPON_SFU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  ring check enable
+  commit
+ ont-srvprofile epon profile-id 10 profile-name "FTTH_10G_EPON_HGU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile epon profile-id 11 profile-name "FTTH_10G_EPON_SFU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile epon profile-id 12 profile-name "FTTO_10G_EPON_HGU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit                               
+ ont-lineprofile epon profile-id 1 profile-name "FTTH_EPON_HGU_LINE"
+  fec enable
+  undo llid dba-profile
+  undo llid ont-car
+  commit
+ ont-lineprofile epon profile-id 3 profile-name "FTTH_EPON_SFU_LINE"
+  fec enable
+  undo llid dba-profile
+  undo llid ont-car
+  commit
+ ont-lineprofile epon profile-id 5 profile-name "FTTO_EPON_HGU_LINE"
+  fec enable
+  undo llid dba-profile
+  undo llid ont-car
+  commit
+ ont-lineprofile epon profile-id 7 profile-name "FTTO_EPON_SFU_LINE"
+  fec enable
+  undo llid dba-profile
+  undo llid ont-car
+  commit
+ ont-lineprofile epon profile-id 10 profile-name "FTTH_10G_EPON_HGU_LINE"
+  undo llid dba-profile
+  undo llid ont-car
+  commit                               
+ ont-lineprofile epon profile-id 11 profile-name "FTTH_10G_EPON_SFU_LINE"
+  undo llid dba-profile
+  undo llid ont-car
+  commit
+ ont-lineprofile epon profile-id 12 profile-name "FTTO_10G_EPON_HGU_LINE"
+  undo llid dba-profile
+  undo llid ont-car
+  commit
+ ont-srvprofile gpon profile-id 2 profile-name "FTTO_GPON_HGU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 4 profile-name "FTTO_GPON_SFU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 6 profile-name "FTTH_GPON_HGU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 8 profile-name "FTTH_GPON_SFU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 9 profile-name "HG8245C_SRV_GPON"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 13 profile-name "FTTH_10G_GPON_HGU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 14 profile-name "FTTH_10G_GPON_SFU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 15 profile-name "FTTO_10G_GPON_HGU_SRV"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 100 profile-name "srv-profile_100"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-lineprofile gpon profile-id 0 profile-name "line-profile_default_0"
+  tcont 0 dba-profile-id 2
+  tcont 1 dba-profile-id 0
+  commit
+  quit
+ ont-lineprofile gpon profile-id 2 profile-name "FTTO_GPON_HGU_LINE"
+  tcont 1
+  gem add 0 eth tcont 1
+  gem add 1 eth tcont 1
+  gem mapping 0 0 vlan 41
+  gem mapping 0 1 vlan 46
+  gem mapping 0 2 vlan 45
+  gem mapping 0 3 vlan 40              
+  gem mapping 0 4 vlan 42
+  gem mapping 0 5 vlan 43
+  gem mapping 0 6 vlan 44
+  gem mapping 0 7 vlan 47
+  gem mapping 1 0 vlan 51
+  gem mapping 1 1 vlan 52
+  gem mapping 1 2 vlan 53
+  gem mapping 1 3 vlan 54
+  gem mapping 1 4 vlan 55
+  gem mapping 1 5 vlan 56
+  gem mapping 1 6 vlan 57
+  gem mapping 1 7 vlan 58
+  commit
+  quit
+ ont-lineprofile gpon profile-id 4 profile-name "FTTO_GPON_SFU_LINE"
+  quit
+ ont-lineprofile gpon profile-id 6 profile-name "FTTH_GPON_HGU_LINE"
+  tcont 1
+  gem add 0 eth tcont 1
+  gem add 1 eth tcont 1
+  gem add 2 eth tcont 1
+  gem add 3 eth tcont 1
+  gem add 4 eth tcont 1
+  gem mapping 0 0 vlan 41              
+  gem mapping 0 1 vlan 46
+  gem mapping 0 2 vlan 45
+  gem mapping 0 3 vlan 40
+  gem mapping 0 4 vlan 42
+  gem mapping 0 5 vlan 43
+  gem mapping 0 6 vlan 44
+  gem mapping 0 7 vlan 47
+  gem mapping 1 0 vlan 51
+  gem mapping 1 1 vlan 52
+  gem mapping 1 2 vlan 53
+  gem mapping 1 3 vlan 54
+  gem mapping 1 4 vlan 55
+  gem mapping 1 5 vlan 56
+  gem mapping 1 6 vlan 57
+  gem mapping 1 7 vlan 58
+  gem mapping 3 1 vlan 1212
+  gem mapping 3 2 vlan 1213
+  gem mapping 3 3 vlan 1214
+  gem mapping 3 4 vlan 1215
+  gem mapping 3 5 vlan 1216
+  gem mapping 3 6 vlan 16
+  gem mapping 3 7 vlan 17
+  gem mapping 4 0 vlan 18
+  gem mapping 4 1 vlan 20              
+  gem mapping 4 2 vlan 19
+  gem mapping 4 3 vlan 1415
+  gem mapping 4 4 vlan 1413
+  gem mapping 4 5 vlan 1414
+  gem mapping 4 6 vlan 1412
+  gem mapping 4 7 vlan 1416
+  commit
+  quit
+ ont-lineprofile gpon profile-id 8 profile-name "FTTH_GPON_SFU_LINE"
+  tcont 1
+  commit
+  quit
+ ont-lineprofile gpon profile-id 9 profile-name "HG8245C_LINE_GPON"
+  tcont 1
+  gem add 0 eth tcont 1
+  commit
+  quit
+ ont-lineprofile gpon profile-id 13 profile-name "FTTH_10G_GPON_HGU_LINE"
+  tcont 1
+  gem add 0 eth tcont 1
+  gem add 1 eth tcont 1
+  gem mapping 0 0 vlan 41
+  gem mapping 0 1 vlan 46
+  gem mapping 0 2 vlan 45              
+  gem mapping 0 3 vlan 40
+  gem mapping 0 4 vlan 42
+  gem mapping 0 5 vlan 43
+  gem mapping 0 6 vlan 44
+  gem mapping 0 7 vlan 47
+  gem mapping 1 0 vlan 51
+  gem mapping 1 1 vlan 52
+  gem mapping 1 2 vlan 53
+  gem mapping 1 3 vlan 54
+  gem mapping 1 4 vlan 55
+  gem mapping 1 5 vlan 56
+  gem mapping 1 6 vlan 57
+  gem mapping 1 7 vlan 58
+  commit
+  quit
+ ont-lineprofile gpon profile-id 14 profile-name "FTTO_10G_GPON_HGU_LINE"
+  tcont 1
+  gem add 0 eth tcont 1
+  gem add 1 eth tcont 1
+  gem mapping 0 0 vlan 41
+  gem mapping 0 1 vlan 46
+  gem mapping 0 2 vlan 45
+  gem mapping 0 3 vlan 40
+  gem mapping 0 4 vlan 42              
+  gem mapping 0 5 vlan 43
+  gem mapping 0 6 vlan 44
+  gem mapping 0 7 vlan 47
+  gem mapping 1 0 vlan 51
+  gem mapping 1 1 vlan 52
+  gem mapping 1 2 vlan 53
+  gem mapping 1 3 vlan 54
+  gem mapping 1 4 vlan 55
+  gem mapping 1 5 vlan 56
+  gem mapping 1 6 vlan 57
+  gem mapping 1 7 vlan 58
+  commit
+  quit
+ ont-lineprofile gpon profile-id 15 profile-name "FTTH_10G_GPON_SFU_LINE"
+  tcont 1
+  commit
+  quit
+ ont-lineprofile gpon profile-id 100 profile-name "line-profile_100"
+  tcont 1 dba-profile-id 100
+  gem add 1 eth tcont 1
+  gem add 2 eth tcont 1
+  gem add 3 eth tcont 1
+  gem add 4 eth tcont 1
+  gem mapping 1 0 vlan 10              
+  gem mapping 1 1 vlan 11
+  gem mapping 1 2 vlan 46
+  gem mapping 1 3 vlan 15
+  gem mapping 1 4 vlan 16
+  gem mapping 1 6 vlan 17
+  gem mapping 1 7 vlan 18
+  gem mapping 2 0 vlan 100
+  gem mapping 2 1 vlan 20
+  gem mapping 2 2 vlan 1001
+  gem mapping 2 3 vlan 1002
+  gem mapping 2 4 vlan 110
+  gem mapping 2 5 vlan 120
+  gem mapping 2 6 vlan 19
+  gem mapping 3 1 vlan 1212
+  gem mapping 3 2 vlan 1213
+  gem mapping 3 3 vlan 1214
+  gem mapping 3 4 vlan 1215
+  gem mapping 3 5 vlan 1216
+  gem mapping 3 6 vlan 1412
+  gem mapping 3 7 vlan 1413
+  gem mapping 4 0 vlan 1414
+  gem mapping 4 1 vlan 1415
+  gem mapping 4 2 vlan 1416
+  commit                               
+  quit
+#
+[cable-init-template]
+  <cable-init-template>
+ interface cable init-template
+ cable capability upstream channel-num 16 downstream channel-num 32 eqam-channel channel-num 64
+ cable capability ofdma-upstream channel-num 2 ofdm-downstream channel-num 6
+#
+[device-config]
+  <device-config>
+ board add standby sub0 CPCB
+#
+[public-config]
+  <public-config>
+ monitor uplink-port traffic port 0/3/0
+ monitor uplink-port traffic port 0/3/1
+ monitor uplink-port traffic port 0/3/2
+ monitor uplink-port traffic port 0/3/3
+ monitor uplink-port traffic port 0/4/0
+ monitor uplink-port traffic port 0/4/1
+ monitor uplink-port traffic port 0/4/2
+ monitor uplink-port traffic port 0/4/3
+ snmp-profile add profile-id 1 profile-name "U2000" v1 "%#%#iGXT,05y>Tzs8--b$UQ)t|lsXS'yC.(\)hDN<>2O>j!jML-~=-fA$[V!^Ji&%#%#" "%#%#bViA#6[PhEUZsw)+o_{290N=D39n)1>/iP7tZx)U=`r;NjuGy91.%QS~i+r5%#%#" 10.20.73.13 162 "%#%#/JEuD];}]#dk==([fvY;g;kV=Y!7tX"^mbNt3AH>Ph7F750/x~jV>1:=OV\I%#%#"
+ snmp-profile add profile-id 2 profile-name "U2000-BH" v1 "%#%#$]$2Ld+4+G.q>0Okj6uEW9Zi*e7\^B'X'60pL,D4CfkU(N[D*+oJ{\48hwD@%#%#" "%#%#l5mz3w\wEB+p>G>f)=IHFIF-RuUM52a6s>HhFW\:{xl"SzjTpHI&n!Fdvom>%#%#" 10.20.73.13 161 "%#%#qlw'5v3*f"7lBuD%$4o2/LR[M%~,CWr}Ga5yV<.Nr<B}V@!0'BN"cBU690X$%#%#"
+ snmp-profile add profile-id 10 profile-name "U2000X" v1 "%#%#}ivg!#9=ULA^g9VP9*[Ub-e=;(CTZKWO[:OxtoY)f1~p&,G83CE(qR2z-hhN%#%#" "%#%#)`$G1'9r,P=wf$,wlKaL*&[D;{,BQDG|NnATx86K(E#-5un2i,.'|_;H>y)G%#%#" 10.20.73.13 162 "%#%#aJ6'&'c&T<_6~P%/h<t&.ANdDNm`LT{HAw$$ue0*z]os(gx=:LwHgDM$64r$%#%#"
+ snmp-agent trap enable standard
+#
+[vlan-config]
+  <vlan-config>
+ vlan 10 to 11 smart
+ vlan 13 smart
+ vlan 15 to 20 smart
+ vlan 100 smart
+ vlan 110 smart
+ vlan 120 smart
+ vlan 136 smart
+ vlan 1001 to 1002 smart
+ vlan 1212 to 1216 smart
+ vlan 1412 to 1416 smart
+ vlan 2302 smart
+ vlan 3991 smart
+ vlan desc 3991 description "DianXin-Management"
+ vlan attrib 2302 stacking
+ port vlan 10 to 11 0/3 0
+ port vlan 13 0/3 0
+ port vlan 15 to 20 0/3 0
+ port vlan 100 0/3 0
+ port vlan 110 0/3 0                   
+ port vlan 120 0/3 0
+ port vlan 136 0/3 0
+ port vlan 1001 to 1002 0/3 0
+ port vlan 1212 to 1216 0/3 0
+ port vlan 1412 to 1416 0/3 0
+ port vlan 2302 0/3 1
+ port vlan 3991 0/3 1
+#
+[vlan-srvprof]
+  <vlan-srvprof>
+ vlan service-profile profile-id 1 profile-name "srvprof-1"
+  user-bridging enable
+  commit
+ vlan service-profile profile-id 10 profile-name "srvprof-10"
+  packet-policy multicast forward
+  commit
+ vlan bind service-profile 20 profile-id 1
+ vlan bind service-profile 1001-1002 profile-id 10
+ vlan bind service-profile 1212-1216 profile-id 1
+ vlan bind service-profile 1412-1416 profile-id 1
+#
+[mpu]
+  <mpu-0/3>
+interface mpu 0/3                      
+ auto-neg 0 disable
+ speed 0 10000
+ auto-neg 1 disable
+ speed 1 1000
+ auto-neg 2 disable
+ speed 2 10000
+ auto-neg 3 disable
+ speed 3 10000
+#
+  <mpu-0/4>
+interface mpu 0/4
+ auto-neg 0 disable
+ speed 0 10000
+ auto-neg 1 disable
+ speed 1 10000
+ auto-neg 2 disable
+ speed 2 10000
+ auto-neg 3 disable
+ speed 3 10000
+#
+[gpon]
+  <gpon-0/1>
+ interface gpon 0/1
+ port 0 ont-auto-find enable           
+ port 1 ont-auto-find enable
+ port 2 ont-auto-find enable
+ port 3 ont-auto-find enable
+ port 4 ont-auto-find enable
+ port 5 ont-auto-find enable
+ port 6 ont-auto-find enable
+ port 7 ont-auto-find enable
+ port 8 ont-auto-find enable
+ port 9 ont-auto-find enable
+ port 10 ont-auto-find enable
+ port 11 ont-auto-find enable
+ port 12 ont-auto-find enable
+ port 13 ont-auto-find enable
+ port 14 ont-auto-find enable
+ port 15 ont-auto-find enable
+ ont add 0 0 loid-auth "0779202006170001" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "dianxin-test" 
+ tcont bind-profile 0 0 1 profile-id 48
+ ont add 0 1 loid-auth "0779001811153324" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSNET2625496" 
+ tcont bind-profile 0 1 1 profile-id 48
+ ont add 0 2 sn-auth "48575443A7BD829E" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE24-1F1#" 
+ ont ipconfig 0 2 static ip-address 10.10.10.21 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 0 3 sn-auth "48575443C6A8A59E" snmp ont-lineprofile-id 100 desc "ONU-MA5821-POE24-1F2#" 
+ ont ipconfig 0 3 static ip-address 10.10.10.11 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 0 4 sn-auth "48575443E2E84F9E" snmp ont-lineprofile-id 100 desc "ONU-MA5821-POE24-1F3#" 
+ ont ipconfig 0 4 static ip-address 10.10.10.31 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 0 5 sn-auth "48575443E153379E" snmp ont-lineprofile-id 100 desc "ONU-MA5821-POE24-B1F2#" 
+ ont ipconfig 0 5 static ip-address 10.10.10.41 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 0 6 sn-auth "485754435FE79010" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE16-B1F1#" 
+ ont ipconfig 0 6 static ip-address 10.10.10.51 mask 255.255.255.0 vlan 11 priority 5 gateway 10.10.10.252
+ ont add 0 7 loid-auth "0779001302069676" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206200" 
+ tcont bind-profile 0 7 1 profile-id 48
+ ont add 0 8 loid-auth "0779001301807532" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206329" 
+ tcont bind-profile 0 8 1 profile-id 48
+ ont add 1 0 loid-auth "0779001811415468" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSNET2625497" 
+ tcont bind-profile 1 0 1 profile-id 48
+ ont add 1 1 sn-auth "48575443E80F5264" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE16-4F1#" 
+ ont ipconfig 1 1 static ip-address 10.10.10.104 mask 255.255.255.0 vlan 11 priority 5 gateway 10.10.10.252
+ ont add 2 0 loid-auth "0779001811284396" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSNET2625498" 
+ tcont bind-profile 2 0 1 profile-id 48
+ ont add 2 1 sn-auth "485754436B1B5E9F" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE16-7F1#" 
+ ont ipconfig 2 1 static ip-address 10.10.10.107 mask 255.255.255.0 vlan 11 priority 5 gateway 10.10.10.252
+ ont add 3 0 loid-auth "0779001811349932" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSNET2625499" 
+ tcont bind-profile 3 0 1 profile-id 48
+ ont add 3 1 sn-auth "485754435FE5A010" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE16-10F1#" 
+ ont ipconfig 3 1 static ip-address 10.10.10.110 mask 255.255.255.0 vlan 11 priority 5 gateway 10.10.10.252
+ ont add 4 0 loid-auth "0779001568211372" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSIPTV2625500" 
+ tcont bind-profile 4 0 1 profile-id 48
+ ont add 4 1 sn-auth "485754436B1B599F" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE16-12F1#" 
+ ont ipconfig 4 1 static ip-address 10.10.10.112 mask 255.255.255.0 vlan 11 priority 5 gateway 10.10.10.252
+ ont add 5 0 loid-auth "0779001811218860" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSNET2625501" 
+ tcont bind-profile 5 0 1 profile-id 48
+ ont add 5 1 loid-auth "0779000945488300" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206119" 
+ tcont bind-profile 5 1 1 profile-id 48
+ ont add 5 2 loid-auth "0779001667039660" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206798" 
+ tcont bind-profile 5 2 1 profile-id 48
+ ont add 5 4 loid-auth "0779001665925548" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206768" 
+ tcont bind-profile 5 4 1 profile-id 48
+ ont add 5 6 loid-auth "0779001666646444" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206786" 
+ tcont bind-profile 5 6 1 profile-id 48
+ ont add 5 8 loid-auth "0779001667236268" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206155" 
+ tcont bind-profile 5 8 1 profile-id 48
+ ont add 5 9 loid-auth "0779001667105196" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3207599" 
+ tcont bind-profile 5 9 1 profile-id 48
+ ont add 5 10 loid-auth "0779001667301804" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206838" 
+ tcont bind-profile 5 10 1 profile-id 48
+ ont add 5 11 loid-auth "0779001666974124" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206799" 
+ tcont bind-profile 5 11 1 profile-id 48
+ ont add 5 12 loid-auth "0779001666711980" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206978" 
+ tcont bind-profile 5 12 1 profile-id 48
+ ont add 5 13 loid-auth "0779001667170732" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206828" 
+ tcont bind-profile 5 13 1 profile-id 48
+ ont add 5 14 loid-auth "0779001666843052" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206300" 
+ tcont bind-profile 5 14 1 profile-id 48
+ ont add 5 15 loid-auth "0779001666777516" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206878" 
+ tcont bind-profile 5 15 1 profile-id 48
+ ont add 5 16 loid-auth "0779001665663404" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206028" 
+ tcont bind-profile 5 16 1 profile-id 48
+ ont add 5 17 loid-auth "0779001665860012" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206076" 
+ tcont bind-profile 5 17 1 profile-id 48
+ ont add 5 18 loid-auth "0779001666515372" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206078" 
+ tcont bind-profile 5 18 1 profile-id 48
+ ont add 5 19 loid-auth "0779001666384300" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206086" 
+ tcont bind-profile 5 19 1 profile-id 48
+ ont add 5 20 loid-auth "0779001666187692" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206890" 
+ tcont bind-profile 5 20 1 profile-id 48
+ ont add 5 21 loid-auth "0779001666253228" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206090" 
+ tcont bind-profile 5 21 1 profile-id 48
+ ont add 5 22 loid-auth "0779001666318764" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206096" 
+ tcont bind-profile 5 22 1 profile-id 48
+ ont add 5 24 loid-auth "0779001665991084" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206068" 
+ tcont bind-profile 5 24 1 profile-id 48
+ ont add 5 25 loid-auth "0779001666056620" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206069" 
+ tcont bind-profile 5 25 1 profile-id 48
+ ont add 5 62 sn-auth "4857544355FC5B9F" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE24-13F1#" 
+ ont ipconfig 5 62 static ip-address 10.10.10.113 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 6 0 loid-auth "0779001568342444" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSIPTV2625502" 
+ tcont bind-profile 6 0 1 profile-id 48
+ ont add 6 1 sn-auth "48575443441E2B9E" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE8-14F2#" 
+ ont ipconfig 6 1 static ip-address 10.10.10.114 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 6 2 sn-auth "4857544355418F9E" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE8-14F1#" 
+ ont ipconfig 6 2 static ip-address 10.10.10.214 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 6 3 loid-auth "0779001667498412" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206239" 
+ tcont bind-profile 6 3 1 profile-id 48
+ ont add 6 4 loid-auth "0779001668415916" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206290" 
+ tcont bind-profile 6 4 1 profile-id 48
+ ont add 6 5 loid-auth "0779001668481452" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206771" 
+ tcont bind-profile 6 5 1 profile-id 48
+ ont add 6 6 loid-auth "0779001668546988" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206772" 
+ tcont bind-profile 6 6 1 profile-id 48
+ ont add 6 7 loid-auth "0779001667563948" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206033" 
+ tcont bind-profile 6 7 1 profile-id 48
+ ont add 6 8 loid-auth "0779001668284844" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206330" 
+ tcont bind-profile 6 8 1 profile-id 48
+ ont add 6 9 loid-auth "0779001668153772" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206236" 
+ tcont bind-profile 6 9 1 profile-id 48
+ ont add 6 10 loid-auth "0779001668022700" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206025" 
+ tcont bind-profile 6 10 1 profile-id 48
+ ont add 6 11 loid-auth "0779001668350380" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206286" 
+ tcont bind-profile 6 11 1 profile-id 48
+ ont add 6 12 loid-auth "0779001668088236" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206056" 
+ tcont bind-profile 6 12 1 profile-id 48
+ ont add 6 13 loid-auth "0779001668612524" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206360" 
+ tcont bind-profile 6 13 1 profile-id 48
+ ont add 6 14 loid-auth "0779001667826092" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206376" 
+ tcont bind-profile 6 14 1 profile-id 48
+ ont add 6 15 loid-auth "0779001667760556" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206058" 
+ tcont bind-profile 6 15 1 profile-id 48
+ ont add 6 16 loid-auth "0779001667629484" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206219" 
+ tcont bind-profile 6 16 1 profile-id 48
+ ont add 6 17 loid-auth "0779001667957164" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206299" 
+ tcont bind-profile 6 17 1 profile-id 48
+ ont add 6 18 loid-auth "0779001667891628" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206050" 
+ tcont bind-profile 6 18 1 profile-id 48
+ ont add 6 19 loid-auth "0779001667695020" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206216" 
+ tcont bind-profile 6 19 1 profile-id 48
+ ont add 6 20 loid-auth "0779001668743596" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206260" 
+ tcont bind-profile 6 20 1 profile-id 48
+ ont add 6 21 loid-auth "0779000840303020" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206229" 
+ tcont bind-profile 6 21 1 profile-id 48
+ ont add 6 22 loid-auth "0779001668809132" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206256" 
+ tcont bind-profile 6 22 1 profile-id 48
+ ont add 6 23 loid-auth "0779000840368556" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206238" 
+ tcont bind-profile 6 23 1 profile-id 48
+ ont add 6 24 loid-auth "0779001299841452" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206775" 
+ tcont bind-profile 6 24 1 profile-id 48
+ ont add 6 25 loid-auth "0779001299775916" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206770" 
+ tcont bind-profile 6 25 1 profile-id 48
+ ont add 6 26 loid-auth "0779001668678060" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206276" 
+ tcont bind-profile 6 26 1 profile-id 48
+ ont add 6 27 loid-auth "0779001300169132" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206156" 
+ tcont bind-profile 6 27 1 profile-id 48
+ ont add 6 28 loid-auth "0779001299906988" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206658" 
+ tcont bind-profile 6 28 1 profile-id 48
+ ont add 6 29 loid-auth "0779001300562348" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206518" 
+ tcont bind-profile 6 29 1 profile-id 48
+ ont add 6 30 loid-auth "0779001666908588" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3205788" 
+ tcont bind-profile 6 30 1 profile-id 48
+ ont add 6 31 loid-auth "0779001300431276" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206558" 
+ tcont bind-profile 6 31 1 profile-id 48
+ ont add 6 32 loid-auth "0779001300365740" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206100" 
+ tcont bind-profile 6 32 1 profile-id 48
+ ont add 6 33 loid-auth "0779001300300204" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206718" 
+ tcont bind-profile 6 33 1 profile-id 48
+ ont add 6 34 loid-auth "0779001299972524" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206568" 
+ tcont bind-profile 6 34 1 profile-id 48
+ ont add 6 35 loid-auth "0779001300103596" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206998" 
+ tcont bind-profile 6 35 1 profile-id 48
+ ont add 6 36 loid-auth "0779001666122156" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3207979" 
+ tcont bind-profile 6 36 1 profile-id 48
+ ont add 7 0 loid-auth "0779001568276908" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSNET2625503" 
+ tcont bind-profile 7 0 1 profile-id 48
+ ont add 7 1 sn-auth "48575443986C3B9E" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE16-15F1#" 
+ ont ipconfig 7 1 static ip-address 10.10.10.115 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 7 2 loid-auth "0779001301086636" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206160" 
+ tcont bind-profile 7 2 1 profile-id 48
+ ont add 7 3 loid-auth "0779001300234668" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206018" 
+ tcont bind-profile 7 3 1 profile-id 48
+ ont add 7 4 loid-auth "0779001300038060" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206128" 
+ tcont bind-profile 7 4 1 profile-id 48
+ ont add 7 5 loid-auth "0779001301021100" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206138" 
+ tcont bind-profile 7 5 1 profile-id 48
+ ont add 7 6 loid-auth "0779001300693420" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206165" 
+ tcont bind-profile 7 6 1 profile-id 48
+ ont add 7 7 loid-auth "0779001301152172" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206169" 
+ tcont bind-profile 7 7 1 profile-id 48
+ ont add 7 8 loid-auth "0779001300955564" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206180" 
+ tcont bind-profile 7 8 1 profile-id 48
+ ont add 7 9 loid-auth "0779001301283244" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206161" 
+ tcont bind-profile 7 9 1 profile-id 48
+ ont add 7 10 loid-auth "0779001300758956" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206565" 
+ tcont bind-profile 7 10 1 profile-id 48
+ ont add 7 11 loid-auth "0779001300824492" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206182" 
+ tcont bind-profile 7 11 1 profile-id 48
+ ont add 7 12 loid-auth "0779001301217708" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206168" 
+ tcont bind-profile 7 12 1 profile-id 48
+ ont add 7 13 loid-auth "0779001300890028" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206181" 
+ tcont bind-profile 7 13 1 profile-id 48
+ ont add 7 14 loid-auth "0779001300496812" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206129" 
+ tcont bind-profile 7 14 1 profile-id 48
+ ont add 7 15 loid-auth "0779001301873068" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206190" 
+ tcont bind-profile 7 15 1 profile-id 48
+ ont add 7 16 loid-auth "0779001301479852" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206199" 
+ tcont bind-profile 7 16 1 profile-id 48
+ ont add 7 17 loid-auth "0779001301348780" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206139" 
+ tcont bind-profile 7 17 1 profile-id 48
+ ont add 7 18 loid-auth "0779001301610924" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206338" 
+ tcont bind-profile 7 18 1 profile-id 48
+ ont add 7 19 loid-auth "0779001302004140" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206319" 
+ tcont bind-profile 7 19 1 profile-id 48
+ ont add 7 20 loid-auth "0779001301741996" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206339" 
+ tcont bind-profile 7 20 1 profile-id 48
+ ont add 7 22 loid-auth "0779001301414316" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206318" 
+ tcont bind-profile 7 22 1 profile-id 48
+ ont add 7 23 loid-auth "0779001301676460" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206198" 
+ tcont bind-profile 7 23 1 profile-id 48
+ ont add 7 24 loid-auth "0779001301545388" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206196" 
+ tcont bind-profile 7 24 1 profile-id 48
+ ont add 7 26 loid-auth "0779001301938604" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206158" 
+ tcont bind-profile 7 26 1 profile-id 48
+ ont add 7 27 loid-auth "0779001302462892" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206008" 
+ tcont bind-profile 7 27 1 profile-id 48
+ ont add 7 28 loid-auth "0779001774322092" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3209099" 
+ tcont bind-profile 7 28 1 profile-id 48
+ ont add 7 29 loid-auth "0779001666449836" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3202929" 
+ tcont bind-profile 7 29 1 profile-id 48
+ ont add 8 0 loid-auth "0779001568407980" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSIPTV2625504" 
+ tcont bind-profile 8 0 1 profile-id 48
+ ont add 8 1 sn-auth "48575443986C0A9E" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE16-16F1#" 
+ ont ipconfig 8 1 static ip-address 10.10.10.116 mask 255.255.255.0 vlan 11 priority 5 gateway 10.100.36.252
+ ont add 8 2 loid-auth "0779001302725036" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3201166" 
+ tcont bind-profile 8 2 1 profile-id 48
+ ont add 8 3 loid-auth "0779001302135212" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206016" 
+ tcont bind-profile 8 3 1 profile-id 48
+ ont add 8 4 loid-auth "0779001302528428" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3207788" 
+ tcont bind-profile 8 4 1 profile-id 48
+ ont add 8 5 loid-auth "0779001302266284" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3202266" 
+ tcont bind-profile 8 5 1 profile-id 48
+ ont add 8 6 loid-auth "0779001302659500" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3205699" 
+ tcont bind-profile 8 6 1 profile-id 48
+ ont add 8 7 loid-auth "0779001302397356" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3202766" 
+ tcont bind-profile 8 7 1 profile-id 48
+ ont add 8 8 loid-auth "0779001302331820" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206366" 
+ tcont bind-profile 8 8 1 profile-id 48
+ ont add 8 9 loid-auth "0779001302593964" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206368" 
+ tcont bind-profile 8 9 1 profile-id 48
+ ont add 8 10 loid-auth "0779001302921644" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206386" 
+ tcont bind-profile 8 10 1 profile-id 48
+ ont add 8 11 loid-auth "0779001302856108" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206396" 
+ tcont bind-profile 8 11 1 profile-id 48
+ ont add 8 12 loid-auth "0779001303052716" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206159" 
+ tcont bind-profile 8 12 1 profile-id 48
+ ont add 8 13 loid-auth "0779001302790572" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206316" 
+ tcont bind-profile 8 13 1 profile-id 48
+ ont add 8 14 loid-auth "0779001302987180" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206398" 
+ tcont bind-profile 8 14 1 profile-id 48
+ ont add 8 15 loid-auth "0779001303118252" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3206009" 
+ tcont bind-profile 8 15 1 profile-id 48
+ ont add 8 16 loid-auth "0779001302200748" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3205699" 
+ tcont bind-profile 8 16 1 profile-id 48
+ ont add 8 17 loid-auth "0779001367015852" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3209368" 
+ tcont bind-profile 8 17 1 profile-id 48
+ ont add 8 18 loid-auth "0779001367081388" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "3208028" 
+ tcont bind-profile 8 18 1 profile-id 48
+ ont add 9 0 loid-auth "0779001568473516" always-on omci ont-lineprofile-id 6 ont-srvprofile-id 6 desc "CSIPTV2625505" 
+ tcont bind-profile 9 0 1 profile-id 48
+ ont add 9 1 sn-auth "48575443441E5A9E" snmp ont-lineprofile-id 100 desc "ONU-MA5626-POE8-17F1#" 
+ ont ipconfig 9 1 static ip-address 10.10.10.117 mask 255.255.255.0 vlan 11 priority 5 gateway 10.10.10.252
+ ont port native-vlan 5 1 eth 1 vlan 17 priority 0 
+ ont port native-vlan 5 1 eth 2 vlan 1213 priority 0 
+ ont port native-vlan 5 1 eth 3 vlan 1213 priority 0 
+#
+[platform-config]
+  <platform-config>
+ autosave time on
+ autosave interval configuration 60
+ autosave type all
+#
+[port-config]
+  <port-config>
+ port desc 0/3/1 description "to-bhdx-huochezhan-9306-1/0/5"
+#
+[emu-config]
+  <emu-config>
+ emu add 0 fan 0 1  "H901FMSA"
+#
+[bbs-config]
+  <bbs-config>
+ service-port 0 vlan 2302 gpon 0/1/0 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 1 vlan 17 gpon 0/1/5 ont 1 gemport 1 multi-service user-vlan 17 tag-transform translate
+ service-port 3 vlan 2302 gpon 0/1/0 ont 1 gemport 0 multi-service user-vlan 41 tag-transform translate-and-add inner-vlan 201 inner-priority 0
+ service-port 4 vlan 2302 gpon 0/1/5 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 5 vlan 2302 gpon 0/1/5 ont 0 gemport 0 multi-service user-vlan 41 tag-transform translate-and-add inner-vlan 971 inner-priority 0
+ service-port 6 vlan 2302 gpon 0/1/4 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 7 vlan 2302 gpon 0/1/4 ont 0 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 8 vlan 2302 gpon 0/1/4 ont 0 gemport 0 multi-service user-vlan 41 tag-transform translate-and-add inner-vlan 901 inner-priority 0
+ service-port 9 vlan 2302 gpon 0/1/9 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 10 vlan 2302 gpon 0/1/9 ont 0 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 11 vlan 2302 gpon 0/1/1 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 12 vlan 2302 gpon 0/1/1 ont 0 gemport 0 multi-service user-vlan 41 tag-transform translate-and-add inner-vlan 271 inner-priority 0
+ service-port 13 vlan 2302 gpon 0/1/3 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 14 vlan 2302 gpon 0/1/3 ont 0 gemport 0 multi-service user-vlan 41 tag-transform translate-and-add inner-vlan 831 inner-priority 0
+ service-port 15 vlan 2302 gpon 0/1/0 ont 1 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 16 vlan 2302 gpon 0/1/2 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 17 vlan 2302 gpon 0/1/2 ont 0 gemport 0 multi-service user-vlan 41 tag-transform translate-and-add inner-vlan 761 inner-priority 0
+ service-port 18 vlan 2302 gpon 0/1/6 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 19 vlan 2302 gpon 0/1/6 ont 0 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 20 vlan 2302 gpon 0/1/8 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 21 vlan 2302 gpon 0/1/8 ont 0 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 22 vlan 2302 gpon 0/1/7 ont 0 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 23 vlan 2302 gpon 0/1/7 ont 0 gemport 0 multi-service user-vlan 41 tag-transform translate-and-add inner-vlan 1111 inner-priority 0
+ service-port 24 vlan 2302 gpon 0/1/1 ont 0 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 25 vlan 2302 gpon 0/1/5 ont 0 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 26 vlan 2302 gpon 0/1/2 ont 0 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 27 vlan 2302 gpon 0/1/7 ont 0 gemport 0 multi-service user-vlan 45 tag-transform translate-and-add inner-vlan 45 inner-priority 0
+ service-port 28 vlan 1213 gpon 0/1/5 ont 1 gemport 1 multi-service user-vlan 1213 tag-transform translate
+ service-port 30 vlan 11 gpon 0/1/0 ont 3 gemport 1 multi-service user-vlan 11 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+ service-port 31 vlan 2302 gpon 0/1/5 ont 1 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 32 vlan 18 gpon 0/1/0 ont 3 gemport 1 multi-service user-vlan 18 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+ service-port 33 vlan 1213 gpon 0/1/5 ont 1 gemport 3 multi-service user-vlan 1213 tag-transform translate
+ service-port 34 vlan 15 gpon 0/1/0 ont 3 gemport 1 multi-service user-vlan 15 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+ service-port 35 vlan 17 gpon 0/1/0 ont 3 gemport 1 multi-service user-vlan 17 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+ service-port 36 vlan 1001 gpon 0/1/0 ont 3 gemport 2 multi-service user-vlan 1001 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+ service-port 37 vlan 1412 gpon 0/1/7 ont 7 gemport 3 multi-service user-vlan 1412 tag-transform translate
+ service-port 38 vlan 2302 gpon 0/1/0 ont 7 gemport 0 multi-service user-vlan 46 tag-transform translate-and-add inner-vlan 46 inner-priority 0
+ service-port 39 vlan 20 gpon 0/1/0 ont 7 gemport 4 multi-service user-vlan 20 tag-transform translate
+ service-port 40 vlan 1412 gpon 0/1/0 ont 7 gemport 3 multi-service user-vlan 1412 tag-transform translate
+ service-port 41 vlan 11 gpon 0/1/0 ont 2 gemport 1 multi-service user-vlan 11 tag-transform translate
+ service-port 42 vlan 1415 gpon 0/1/7 ont 13 gemport 4 multi-service user-vlan 1415 tag-transform translate
+ service-port 43 vlan 1413 gpon 0/1/7 ont 13 gemport 4 multi-service user-vlan 1413 tag-transform translate
+ service-port 44 vlan 1414 gpon 0/1/7 ont 13 gemport 4 multi-service user-vlan 1414 tag-transform translate
+ service-port 45 vlan 1002 gpon 0/1/0 ont 3 gemport 2 multi-service user-vlan 1002 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+ service-port 46 vlan 1412 gpon 0/1/0 ont 3 gemport 3 multi-service user-vlan 1412 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+ service-port 47 vlan 11 gpon 0/1/0 ont 6 gemport 1 multi-service user-vlan 11 tag-transform translate
+ service-port 48 vlan 1416 gpon 0/1/7 ont 13 gemport 4 multi-service user-vlan 1416 tag-transform translate
+ service-port 50 vlan 17 gpon 0/1/0 ont 6 gemport 1 multi-service user-vlan 17 tag-transform translate
+ service-port 51 vlan 18 gpon 0/1/0 ont 6 gemport 1 multi-service user-vlan 18 tag-transform translate
+ service-port 53 vlan 11 gpon 0/1/7 ont 1 gemport 1 multi-service user-vlan 11 tag-transform translate
+ service-port 54 vlan 1001 gpon 0/1/7 ont 1 gemport 2 multi-service user-vlan 1001 tag-transform translate
+ service-port 56 vlan 18 gpon 0/1/7 ont 1 gemport 1 multi-service user-vlan 18 tag-transform translate
+ service-port 58 vlan 1415 gpon 0/1/7 ont 1 gemport 4 multi-service user-vlan 1415 tag-transform translate
+ service-port 59 vlan 1215 gpon 0/1/7 ont 1 gemport 3 multi-service user-vlan 1215 tag-transform translate
+ service-port 61 vlan 11 gpon 0/1/8 ont 1 gemport 1 multi-service user-vlan 11 tag-transform translate
+ service-port 64 vlan 1001 gpon 0/1/8 ont 1 gemport 2 multi-service user-vlan 1001 tag-transform translate
+ service-port 65 vlan 1002 gpon 0/1/8 ont 1 gemport 2 multi-service user-vlan 1002 tag-transform translate
+ service-port 66 vlan 18 gpon 0/1/8 ont 1 gemport 1 multi-service user-vlan 18 tag-transform translate
+ service-port 67 vlan 15 gpon 0/1/8 ont 1 gemport 1 multi-service user-vlan 15 tag-transform translate
+ service-port 68 vlan 1416 gpon 0/1/8 ont 1 gemport 4 multi-service user-vlan 1416 tag-transform translate
+ service-port 69 vlan 1216 gpon 0/1/8 ont 1 gemport 3 multi-service user-vlan 1216 tag-transform translate
+ service-port 70 vlan 13 gpon 0/1/8 ont 1 gemport 1 multi-service user-vlan 13 tag-transform translate
+ service-port 71 vlan 1001 gpon 0/1/6 ont 1 gemport 2 multi-service user-vlan 1001 tag-transform translate
+ service-port 72 vlan 1002 gpon 0/1/6 ont 1 gemport 2 multi-service user-vlan 1002 tag-transform translate
+ service-port 73 vlan 18 gpon 0/1/6 ont 1 gemport 1 multi-service user-vlan 18 tag-transform translate
+ service-port 75 vlan 1414 gpon 0/1/6 ont 1 gemport 4 multi-service user-vlan 1414 tag-transform translate
+ service-port 76 vlan 1214 gpon 0/1/6 ont 1 gemport 3 multi-service user-vlan 1214 tag-transform translate
+ service-port 78 vlan 11 gpon 0/1/6 ont 1 gemport 1 multi-service user-vlan 11 tag-transform translate
+ service-port 79 vlan 11 gpon 0/1/6 ont 2 gemport 1 multi-service user-vlan 11 tag-transform translate
+ service-port 80 vlan 1001 gpon 0/1/6 ont 2 gemport 2 multi-service user-vlan 1001 tag-transform translate
+ service-port 81 vlan 1002 gpon 0/1/6 ont 2 gemport 2 multi-service user-vlan 1002 tag-transform translate
+ service-port 82 vlan 18 gpon 0/1/6 ont 2 gemport 1 multi-service user-vlan 18 tag-transform translate
+ service-port 84 vlan 1414 gpon 0/1/6 ont 2 gemport 4 multi-service user-vlan 1414 tag-transform translate
+ service-port 85 vlan 1214 gpon 0/1/6 ont 2 gemport 3 multi-service user-vlan 1214 tag-transform translate
+ service-port 90 vlan 1001 gpon 0/1/0 ont 6 gemport 2 multi-service user-vlan 1001 tag-transform translate
+ service-port 91 vlan 1002 gpon 0/1/0 ont 6 gemport 2 multi-service user-vlan 1002 tag-transform translate
+ service-port 94 vlan 1001 gpon 0/1/0 ont 2 gemport 2 multi-service user-vlan 1001 tag-transform translate
+ service-port 95 vlan 1002 gpon 0/1/0 ont 2 gemport 2 multi-service user-vlan 1002 tag-transform translate
+ service-port 96 vlan 18 gpon 0/1/0 ont 2 gemport 1 multi-service user-vlan 18 tag-transform translate
+ service-port 98 vlan 17 gpon 0/1/0 ont 2 gemport 1 multi-service user-vlan 17 tag-transform translate
+ service-port 99 vlan 1412 gpon 0/1/0 ont 2 gemport 3 multi-service user-vlan 1412 tag-transform translate
+ service-port 101 vlan 16 gpon 0/1/0 ont 2 gemport 1 multi-service user-vlan 16 tag-transform translate
+ service-port 102 vlan 1001 gpon 0/1/0 ont 4 gemport 2 multi-service user-vlan 1001 tag-transform translate
+ service-port 103 vlan 1002 gpon 0/1/0 ont 4 gemport 2 multi-service user-vlan 1002 tag-transform translate
+ service-port 104 vlan 18 gpon 0/1/0 ont 4 gemport 1 multi-service user-vlan 18 tag-transform translate
+ service-port 105 vlan 15 gpon 0/1/0 ont 4 gemport 1 multi-service user-vlan 15 tag-transform translate
+ service-port 106 vlan 17 gpon 0/1/0 ont 4 gemport 1 multi-service user-vlan 17 tag-transform translate
+ service-port 107 vlan 1412 gpon 0/1/0 ont 4 gemport 3 multi-service user-vlan 1412 tag-transform translate
+ service-port 108 vlan 11 gpon 0/1/0 ont 4 gemport 1 multi-service user-vlan 11 tag-transform translate
+ service-port 109 vlan 16 gpon 0/1/0 ont 4 gemport 1 multi-service user-vlan 16 tag-transform translate
+ service-port 110 vlan 1001 gpon 0/1/0 ont 5 gemport 2 multi-service user-vlan 1001 tag-transform translate
+ service-port 111 vlan 1002 gpon 0/1/0 ont 5 gemport 2 multi-service user-vlan 1002 tag-transform translate
+ service-port 112 vlan 18 gpon 0/1/0 ont 5 gemport 1 multi-service user-vlan 18 tag-transform translate
+ service-port 113 vlan 15 gpon 0/1/0 ont 5 gemport 1 multi-service user-vlan 15 tag-transform translate
+ service-port 114 vlan 17 gpon 0/1/0 ont 5 gemport 1 multi-service user-vlan 17 tag-transform translate
+ service-port 115 vlan 1412 gpon 0/1/0 ont 5 gemport 3 multi-service user-vlan 1412 tag-transform translate
+                                       
+OLT-MA5800-X2(config)#quit 
+
+OLT-MA5800-X2#quit 
+  注意系统数据是否有更新，请在退出前保存数据，确定要退出登录吗？ (y/n)[n]：y
+
+  已经退出配置后台
+  请重建连接后登录
+
+Info: The connection was closed by the remote host.
+<HUAWEI s5731 s24t4x>quit
+Info: The max number of VTY users is 10, and the number

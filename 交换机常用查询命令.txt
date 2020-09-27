@@ -1,0 +1,3 @@
+display logbuffer 查询操作日志
+display info-center statistics 用来查看信息中心的统计信息
+时间信息                          display clock
